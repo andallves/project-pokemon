@@ -1,0 +1,35 @@
+.container {
+    min-width: 375px;
+    height: 721px;
+    background-color: #C20001;
+}
+
+.title {
+    position: relative;
+    width: 327px;
+    height: 118px;
+    top: 207px;
+    left: 24px;
+
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58.51px;
+    letter-spacing: -1%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.subtitle {
+    position: relative;
+    width: 331px;
+    height: 54px;
+    top: 349px;
+    left: 22px;
+
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+}
