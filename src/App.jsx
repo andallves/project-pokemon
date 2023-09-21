@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Header } from './layout/Header'
-import { SearchPokemon } from './components/SearchPokemon'
+import { Navbar } from './layout/Navbar'
+
 
 function App() {
 
   return (
     <main>
+      <Navbar />
       <Header />
-      <SearchPokemon />
+      
     </main>
   )
 }
