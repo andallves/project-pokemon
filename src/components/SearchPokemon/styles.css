@@ -1,12 +1,22 @@
-label {
-    width: 305.87px;
-    height: 26.68px;
-    top: 910.97px;
-    left: 33.99px;
-    color: #2f3133;
+.container-input-search {
+    width: 1237px;
+    height: 78px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 35px 50px;
 }
 
-input {
+.label-search-pokemon {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39.01px;
+    letter-spacing: -1%;
+    color: #2F3133;
+}
+
+.input-search-pokemon {
     width: 326px;
     height: 56px;
     top: 979px;
