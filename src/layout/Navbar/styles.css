@@ -1,9 +1,30 @@
+.navbar-container {
+  width: 100%;
+  height: 112px;
+  padding: 35px 80px;
+
+}
 .navbar {
   display: flex;
-  justify-content: space-around ;
+  justify-content: space-between ;
   align-items: center;
   flex-direction: row;
   width: 100%;
-
-
 }
+
+.codeboost {
+  color: #ffffff;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.boost {
+  color: #ffffff;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
