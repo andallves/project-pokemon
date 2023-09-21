@@ -1,22 +1,21 @@
-import { SearchPokemon } from '../../components/SearchPokemon'
 import pokeball from '../../assets/img/pokeball-red.png'
 
 import './styles.css'
+import { Navbar } from '../Navbar'
+import { Heading } from '../../components/Heading'
 
 export const Header = () => {
     return (
         <header>
             <div className='container'>
-                <h1 className='title'>
-                    Who is that Pokémon?
-                </h1>
-                <p className='subtitle'>
-                    The perfect guide for those who want to hunt Pokémons around the world
-                </p>
+                <Navbar />
+
+                <Heading
+                    title={'Who is that Pokémon?'}
+                    subtitle={'The perfect guide for those who want to hunt Pokémons around the world'}
+                />
 
                 <img className='pokeball' src={pokeball} alt='pokeball-red'/>
-
-                <SearchPokemon />
             </div>
         </header>
     )
