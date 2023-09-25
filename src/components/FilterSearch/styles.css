@@ -1,0 +1,32 @@
+.container-types {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  width: 60px;
+  height: 23px;
+}
+
+.container-types button {
+  width: 100px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #ACB9C1;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 25px;
+}
+
+.container-types button:active {
+  color: #3e75c3;
+}
+
+.container-types button img {
+  width: 16px;
+}
