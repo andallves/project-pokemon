@@ -78,7 +78,7 @@ function App() {
             ))}
           </div>
 
-          <LoadMoreCards />
+          <LoadMoreCards buttonText='Load more Pokémons' />
         </div>
       </div>
 

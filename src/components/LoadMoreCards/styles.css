@@ -8,7 +8,8 @@
 }
 
 .btn-loadmore {
-  width: 196px;
+  width: 100%;
+  max-width: 200px;
   height: 45px;
   border: none;
   border-radius: 6px;

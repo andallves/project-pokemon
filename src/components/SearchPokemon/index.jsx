@@ -10,11 +10,11 @@ export const SearchPokemon = ({ textLabel, handleChange, searchValue, placeholde
             </label>
             <div className='container-input'>
                 <input 
-                    onChange={(e) => handleChange(e)}
                     type='search' 
-                    value={searchValue}
-                    placeholder={placeholder}
                     name='input-search'
+                    placeholder={placeholder}
+                    // value={searchValue}
+                    onChange={(e) => handleChange(e)}
                     autoFocus
                 />
                 <button type='submit'>

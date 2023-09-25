@@ -21,6 +21,7 @@
   border: none;
   display: flex;
   gap: 25px;
+  cursor: pointer;
 }
 
 .container-types button:active {

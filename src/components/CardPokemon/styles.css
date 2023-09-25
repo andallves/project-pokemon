@@ -55,6 +55,7 @@
 }
 
 .pokemon-title {
+    text-align: start;
     width: 115px;
     height: 53px;
     gap: 6px;

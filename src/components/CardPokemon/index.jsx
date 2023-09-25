@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import './styles.css'
 import { useEffect, useRef, useState } from 'react'
-import GrassType from '../../assets/img/icon-types/grass.svg'
+// import GrassType from '../../assets/img/icon-types/grass.svg'
 
 export const CardPokemon = ({ urlPokemon }) => {
     const [pokemonData, setPokemonData] = useState({})
@@ -32,7 +32,7 @@ export const CardPokemon = ({ urlPokemon }) => {
     const getPokemonType = (pokemonType) => {
         switch(pokemonType) {
             case "grass":
-                return GrassType
+                return "grass"
         }
         return console.log('err')
     }
