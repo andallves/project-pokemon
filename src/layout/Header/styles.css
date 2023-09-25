@@ -12,6 +12,7 @@
 
 .pokeball {
     position: absolute;
-    top: 450px
+    top: 450px;
+    z-index: 10;
 
 }
