@@ -1,9 +1,9 @@
 import './styles.css'
 import PropTypes from 'prop-types'
-import { getPokemonType } from '../../utils/get-type-image'
+import { getPokemonTypeImage } from '../../utils/get-type-image'
 
 export const FilterSearch = ({ typeName, handleClickFilter }) => {
-    const typeImg = getPokemonType(typeName)
+    const typeImg = getPokemonTypeImage(typeName)
 
     return (
         <div className='container-types'>

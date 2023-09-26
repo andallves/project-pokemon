@@ -16,8 +16,9 @@ import fighting from '../assets/img/icon-types/fighting.svg'
 import fire from '../assets/img/icon-types/fire.svg'
 import flying from '../assets/img/icon-types/flying.svg'
 import ghost from '../assets/img/icon-types/ghost.svg'
+import all from '../assets/img/icon-types/icon-all.svg'
 
-export const getPokemonType = (pokemonType) => {
+export const getPokemonTypeImage = (pokemonType) => {
     switch(pokemonType) {
         case "grass": 
             return grass;
@@ -55,5 +56,7 @@ export const getPokemonType = (pokemonType) => {
             return flying;
         case "ghost":
             return ghost;
+        case "all":
+            return all;
     }       
 }
