@@ -1,67 +1,118 @@
 .card-pokemon {
+    position: relative;
     width: 100%;
     max-width: 28rem;
     height: 30.4rem;
     background-color: #ffffff;
     box-shadow: 0px 10px 51px -5px rgba(183, 189,193, 0.3);
-    border: none;
     border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
     transition: 300ms ease-in-out;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    gap: 20px;
-}
-
-.card-pokemon:hover {
-    transform: scale(1.05);
-    /* box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.3); */
-}
-
-.container-image {
-    position: relative;
-    display: flex;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: #2f3133;
-    background-image: url('../../assets/img/bg-types/dark.svg');
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+    z-index: 1;
     cursor: pointer;
 }
 
-.pokemon-image {
-    display: block;
-    top: -10.04px;
-    width: 141.04px;
-    height: 139.98px;
-   
-    
+.card-pokemon:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 12px 40px -5px rgba(90, 96, 100, 0.3);
 }
 
-.container-title {
+.card-pokemon.grass .image::after {
+    background-color: rgba(114, 184, 97, 0.2);
+}
+.card-pokemon.bug .image::after {
+    background-color: rgba(156, 186, 72, 0.2);
+}
+.card-pokemon.dark .image::after {
+    background-color: rgba(89, 87, 97, 0.2);
+}
+.card-pokemon.dragon .image::after {
+    background-color: rgba(44, 106, 193, 0.2);
+}
+.card-pokemon.eletric .image::after {
+    background-color: rgba(238, 218, 103, 0.2);
+}
+.card-pokemon.fairy .image::after {
+    background-color: rgba(226, 150, 225, 0.2);
+}
+.card-pokemon.fighting .image::after {
+    background-color: rgba(196, 77, 97, 0.2);
+}
+.card-pokemon.fire .image::after {
+    background-color: rgba(246, 109, 109, 0.2);
+}
+.card-pokemon.flying .image::after {
+    background-color: rgba(166, 187, 232, 0.2);
+}
+.card-pokemon.ghost .image::after {
+    background-color: rgba(97, 110, 183, 0.2);
+}
+.card-pokemon.ground .image::after {
+    background-color: rgba(206, 128, 86, 0.2);
+}
+.card-pokemon.ice .image::after {
+    background-color: rgba(139, 206, 193, 0.2);
+}
+.card-pokemon.normal .image::after {
+    background-color: rgba(160, 162, 159, 0.2);
+}
+.card-pokemon.poison .image::after {
+    background-color: rgba(172, 106, 202, 0.2);
+}
+.card-pokemon.psychic .image::after {
+    background-color: rgba(235, 140, 133, 0.2);
+}
+.card-pokemon.rock .image::after {
+    background-color: rgba(139, 206, 193, 0.2);
+}
+.card-pokemon.stell .image::after {
+    background-color: rgba(101, 148, 161, 0.2);
+}
+.card-pokemon.water .image::after {
+    background-color: rgba(136, 163, 212, 0.2);
+}
+
+.image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 1.4rem;
+}
+
+.image::after {
+    position: absolute;
+    content: "";
+    width: 16.5rem;
+    height: 16.5rem;
+
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.thumb-img {
+    max-width: 14.2rem;
+}
+
+.info {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    padding: 5px 20px;
-    margin-top: 10px;
+    padding: 0 2.8rem;
 }
 
-.pokemon-title {
-    text-align: start;
+.text {
     width: 115px;
     height: 53px;
-    gap: 6px;
 }
 
-.pokemon-title span {
+.text span {
+    text-align: left;
+    display: block;
+    margin-bottom: .6rem;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 13px;
@@ -69,7 +120,8 @@
     color: #7a7d90;
 }
 
-.pokemon-title h3 {
+.text h3 {
+    text-align: left;
     width: 115px;
     height: 27px;
     font-family: 'Montserrat', sans-serif;
@@ -79,14 +131,8 @@
     color: #2f3133; 
 }
 
-.pokemon-type {
-    width: 16.8px;
-    height: 18px;
+.icon-type {
+    margin-bottom: 1rem;
 }
 
-.pokemon-type img {
-    width: 16px;
-    height: 18px;
-    object-fit: contain;
-}
 
