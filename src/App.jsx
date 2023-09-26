@@ -1,14 +1,14 @@
-import { useCallback, useEffect, useState } from 'react';
 import './App.css'
+import { useCallback, useEffect, useState } from 'react';
 import { Header } from './layout/Header'
+import { Footer } from './layout/Footer';
 import { CardPokemon } from './components/CardPokemon'
 import { SearchPokemon } from './components/SearchPokemon'
-import { Footer } from './layout/Footer';
 import { FilterSearch } from './components/FilterSearch';
 import { SearchAnswer } from './components/SearchAnswer';
 import { LoadMoreCards } from './components/LoadMoreCards';
-import { loadPokemons } from './utils/load-pokemon';
 import { loadPokemonsTypes } from './utils/load-types';
+import { loadPokemons } from './utils/load-pokemon';
 
 function App() {
     const [pokemons, setPokemons] = useState([]);
@@ -17,11 +17,11 @@ function App() {
     const [pokemonsPerPage] = useState(9)
     const [pokemonType, setPokemonType] = useState([])
     const [searchValue, setSearchValue] = useState('')
+    const [filter, setFilter] = useState(false)
 
     const handleLoadPokemons = useCallback(async (page, pokemonsPerPage) => {
         const pokemonsWithTypes = await loadPokemons()
         const pokemonTypeResponse = await loadPokemonsTypes()
-
         setPokemons(pokemonsWithTypes.slice(page, pokemonsPerPage))
         setPokemonType(pokemonTypeResponse)
         setAllPokemons(pokemonsWithTypes)
@@ -60,6 +60,7 @@ function App() {
                 typeName.toLowerCase()
             )
         })
+        setFilter(true)
         setPokemons(filteredPokemon)
     }
 
@@ -75,27 +76,32 @@ function App() {
             />
             <div className='container-section'>
                 <div className='container-filter'>
-                {pokemonType.length > 0 &&
-                    pokemonType.map((type) => (
-                    <FilterSearch 
-                        key={type.url} 
-                        typeName={type.name}
-                        handleClickFilter={filteredPokemonByType}
+                    <FilterSearch
+                        typeName={'all'}
+                        handleClickFilter={handleLoadPokemons(0, pokemonsPerPage)}
                     />
-                ))}
+                    {pokemonType.length > 0 &&
+                    pokemonType.map((type) => (
+                        <FilterSearch 
+                            key={type.url} 
+                            typeName={type.name}
+                            handleClickFilter={filteredPokemonByType}
+                        />
+                    ))}
                 </div>
 
                 <div className='container-pokemons'>
-                    {/* {searchedPokemons.length > 0 ? (
+                    {filter ? (
                         <SearchAnswer 
-                            filter
+                            filter={filter}
                             length={searchedPokemons.length}
+                            type={pokemons.type}
                         />
                     ) : (
                         <SearchAnswer 
                             length={allPokemons.length}  
                         />
-                    )} */}
+                    )}
                     <div className='container-pokemons-card'>
                         {searchedPokemons.length > 0 &&
                         searchedPokemons.map((pokemon) => (
