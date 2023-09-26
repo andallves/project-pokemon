@@ -1,17 +1,24 @@
-import PropTypes from 'prop-types'
 import './styles.css'
+import PropTypes from 'prop-types'
+import { getPokemonType } from '../../utils/get-type-image'
 
-export const FilterSearch = ({ titleType }) => {
-  return (
-    <div className='container-types'>
-      <button type='button'>
-        <img src={`../../assets/img/icon-types/${titleType}.svg`} />
-        {titleType}
-      </button>
-    </div>
-  )
+export const FilterSearch = ({ typeName, handleClickFilter }) => {
+    const typeImg = getPokemonType(typeName)
+
+    return (
+        <div className='container-types'>
+        <button 
+            type='button'
+            onClick={() => handleClickFilter(typeName)}
+        >
+            <img src={typeImg} />
+            {typeName}
+        </button>
+        </div>
+    )
 }
 
 FilterSearch.propTypes = {
-  titleType: PropTypes.string.isRequired,
+  typeName: PropTypes.string.isRequired,
+  handleClickFilter: PropTypes.func.isRequired
 }

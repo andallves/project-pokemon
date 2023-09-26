@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import './styles.css'
 import { useEffect, useRef, useState } from 'react'
-import { getPokemonType } from '../../utils/get-type-name'
+import { getPokemonType } from '../../utils/get-type-image'
 // import GrassType from '../../assets/img/icon-types/grass.svg'
 
 export const CardPokemon = ({ urlPokemon }) => {

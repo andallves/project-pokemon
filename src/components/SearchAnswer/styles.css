@@ -4,6 +4,11 @@
   display: flex;
   align-items: flex-start;
   padding: 20px;
+  gap: 2rem;
+}
+
+.container-title img {
+    width: 100%px;
 }
 
 .cards-title {

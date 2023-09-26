@@ -13,7 +13,7 @@ export const SearchPokemon = ({ textLabel, handleChange, searchValue, placeholde
                     type='search' 
                     name='input-search'
                     placeholder={placeholder}
-                    // value={searchValue}
+                    value={searchValue}
                     onChange={(e) => handleChange(e)}
                     autoFocus
                 />

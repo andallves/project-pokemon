@@ -24,3 +24,9 @@
   letter-spacing: -1%;
   color: #3f5db3; 
 }
+
+.btn-loadmore:disabled {
+    background-color: rgba(136, 136, 136, 0.251);
+    color: rgba(0, 0, 0, 0.507);
+    cursor: not-allowed;
+}
