@@ -7,9 +7,13 @@ export const SearchAnswer = ({ filter = false, length = 0, type = '' }) => {
         <>
             {filter ? (
                 <div className='container-title'>
-                    <img src={pokeballIcon} alt='pokeball' className='filtered' />
-                    <h3 className='cards-title'>Search results</h3>
-                    <p>Showing {length} results for: {type}</p>
+                    <div>
+                        <img src={pokeballIcon} alt='pokeball' className='filtered' />
+                    </div>
+                    <div>
+                        <h3 className='cards-title'>Search results</h3>
+                        <p className='result'>Showing {length} results for: <span>{type}</span></p>
+                    </div>
                 </div> 
             ) : (
                 <div className='container-title'>
