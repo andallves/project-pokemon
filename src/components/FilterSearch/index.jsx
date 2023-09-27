@@ -1,6 +1,7 @@
 import './styles.css'
 import PropTypes from 'prop-types'
 import { getPokemonTypeImage } from '../../utils/get-type-image'
+import { capitalizeFirstLetter } from '../../utils/captitaliza-first-letter'
 
 export const FilterSearch = ({ typeName, handleClickFilter }) => {
     const typeImg = getPokemonTypeImage(typeName)
@@ -12,7 +13,7 @@ export const FilterSearch = ({ typeName, handleClickFilter }) => {
             onClick={() => handleClickFilter(typeName)}
         >
             <img src={typeImg} />
-            {typeName}
+            {capitalizeFirstLetter(typeName)}
         </button>
         </div>
     )
