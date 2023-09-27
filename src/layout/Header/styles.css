@@ -1,4 +1,4 @@
-.container {
+.container-header {
     width: 100%;
     height: 706px;
     background-color: #C20001;
@@ -8,6 +8,15 @@
     align-items: center;
     gap: 50px;
     flex-direction: column;
+    transition: all 300ms;
+}
+
+.container-header.bg-red {
+    background-image: url('../../assets/img/bg-red.svg');
+}
+
+.container-header.bg-blue {
+    background-image: url('../../assets/img/bg-blue.svg');
 }
 
 .pokeball {
@@ -15,4 +24,9 @@
     top: 450px;
     z-index: 10;
 
+}
+
+.pokeball.blue {
+    top: 385px;
+    padding-left: 15px;
 }
