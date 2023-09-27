@@ -1,5 +1,6 @@
 import './App.css'
 import { useCallback, useEffect, useState } from 'react';
+import { ScaleLoader } from 'react-spinners'
 import { Header } from './layout/Header'
 import { Footer } from './layout/Footer';
 import { CardPokemon } from './components/CardPokemon'
@@ -18,13 +19,16 @@ function App() {
     const [pokemonType, setPokemonType] = useState([])
     const [searchValue, setSearchValue] = useState('')
     const [filter, setFilter] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleLoadPokemons = useCallback(async (page, pokemonsPerPage) => {
+        setIsLoading(true)
         const pokemonsWithTypes = await loadPokemons()
         const pokemonTypeResponse = await loadPokemonsTypes()
         setPokemons(pokemonsWithTypes.slice(page, pokemonsPerPage))
         setPokemonType(pokemonTypeResponse)
         setAllPokemons(pokemonsWithTypes)
+        setIsLoading(false)
     }, [])
 
     useEffect(() => {
@@ -40,9 +44,11 @@ function App() {
     }
 
     const handleChangeSearchValue = (e) => {
+        setIsLoading(true)
         e.preventDefault()
         const { value } = e.target
         setSearchValue(value)
+        setIsLoading(false)
     }
 
     const noMorePokemons = page + pokemonsPerPage >= allPokemons.length
@@ -76,10 +82,12 @@ function App() {
             />
             <div className='container-section'>
                 <div className='container-filter'>
-                    <FilterSearch
+                    
+                    {/* <FilterSearch
                         typeName={'all'}
                         handleClickFilter={handleLoadPokemons(0, pokemonsPerPage)}
-                    />
+                    /> */}
+
                     {pokemonType.length > 0 &&
                     pokemonType.map((type) => (
                         <FilterSearch 
@@ -103,6 +111,7 @@ function App() {
                         />
                     )}
                     <div className='container-pokemons-card'>
+                        
                         {searchedPokemons.length > 0 &&
                         searchedPokemons.map((pokemon) => (
                             <CardPokemon
@@ -112,11 +121,18 @@ function App() {
                         ))}
                     </div>
 
-                    <LoadMoreCards 
-                        buttonText='Load more Pokémons' 
-                        handleClickLoadMore={LoadMorePokemons} 
-                        disabled={noMorePokemons}
-                    />
+                    {isLoading ? (
+                            <div className='spinners'>
+                                <ScaleLoader color="#c41111" width={7} />                            
+                            </div>
+                        ) : (
+                            <LoadMoreCards 
+                                buttonText='Load more Pokémons' 
+                                handleClickLoadMore={LoadMorePokemons} 
+                                disabled={noMorePokemons}
+                            />
+                        ) }
+
                 </div>
             </div>
 
