@@ -1,5 +1,5 @@
 import './App.css'
-import { useCallback, useEffect, useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { ScaleLoader } from 'react-spinners'
 import { Header } from './layout/Header'
 import { Footer } from './layout/Footer';
@@ -36,31 +36,34 @@ function App() {
     }, [handleLoadPokemons, pokemonsPerPage])
 
     const LoadMorePokemons = () => {
+        setIsLoading(true)
         const nextPage = page + pokemonsPerPage
         const nextCards = allPokemons.slice(nextPage, nextPage + pokemonsPerPage)
         pokemons.push(...nextCards)
         setPokemons(pokemons)
         setPage(nextPage)
+        setIsLoading(false)
     }
 
     const handleChangeSearchValue = (e) => {
-        setIsLoading(true)
         e.preventDefault()
+        setIsLoading(true)
         const { value } = e.target
         setSearchValue(value)
         setIsLoading(false)
     }
 
     const noMorePokemons = page + pokemonsPerPage >= allPokemons.length
-    const searchedPokemons = searchValue ?
-        allPokemons.filter((pokemon) => {
+    const searchedPokemons = searchValue ? allPokemons.filter((pokemon) => {
             return pokemon.name.toLowerCase().includes(
                 searchValue.toLowerCase()
             )
         })
     : pokemons
+    
 
     const filteredPokemonByType = (typeName) => {
+        setIsLoading(true)
         const filteredPokemon = allPokemons.filter((pokemon) => {
             return pokemon.type.toLowerCase().includes(
                 typeName.toLowerCase()
@@ -68,6 +71,7 @@ function App() {
         })
         setFilter(true)
         setPokemons(filteredPokemon)
+        setIsLoading(false)
     }
 
     return (
@@ -110,7 +114,7 @@ function App() {
                             length={allPokemons.length}  
                         />
                     )}
-                    <div className='container-pokemons-card'>
+                    <div className='container-pokemons-card' id='cards'>
                         
                         {searchedPokemons.length > 0 &&
                         searchedPokemons.map((pokemon) => (
@@ -125,13 +129,13 @@ function App() {
                             <div className='spinners'>
                                 <ScaleLoader color="#c41111" width={7} />                            
                             </div>
-                        ) : (
+                    ) : (
                             <LoadMoreCards 
                                 buttonText='Load more Pokémons' 
                                 handleClickLoadMore={LoadMorePokemons} 
                                 disabled={noMorePokemons}
                             />
-                        ) }
+                    ) }
 
                 </div>
             </div>
