@@ -48,3 +48,7 @@
   margin: 20px 0;
   gap: 40px;
 }
+
+li {
+  list-style: none;
+}
