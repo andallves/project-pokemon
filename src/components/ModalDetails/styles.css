@@ -69,80 +69,90 @@
   background-size: cover;
 }
 
-.image-modal.bug {
+.image-modal::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 19.1rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.image-modal.bug::before {
   background-image: url("../../assets/img/bg-types/grass.svg");
 }
 
-.image-modal.fire {
-
+.image-modal.fire::before {
   background-image: url("../../assets/img/bg-types/fire.svg");
 }
 
-.image-modal.water {
+.image-modal.water::before {
   background-image: url("../../assets/img/bg-types/water.svg");
 }
 
-.image-modal.bug {
+.image-modal.bug::before {
   background-image: url("../../assets/img/bg-types/fighting.svg");
 }
 
-.image-modal.grass {
+.image-modal.grass::before {
   background-image: url("../../assets/img/bg-types/grass.svg");
 }
 
-.image-modal.poison {
+.image-modal.poison::before {
   background-image: url("../../assets/img/bg-types/poison.svg");
 }
 
-.image-modal.dark {
+.image-modal.dark::before {
   background-image: url("../../assets/img/bg-types/dark.svg");
 }
 
-.image-modal.dragon {
+.image-modal.dragon::before {
   background-image: url("../../assets/img/bg-types/dragon.svg");
 }
 
-.image-modal.electric {
+.image-modal.electric::before {
   background-image: url("../../assets/img/bg-types/electric.svg");
 }
 
-.image-modal.fairy {
+.image-modal.fairy::before {
   background-image: url("../../assets/img/bg-types/fairy.svg");
 }
 
-.image-modal.fighting {
+.image-modal.fighting::before {
   background-image: url("../../assets/img/bg-types/fighting.svg");
 }
 
-.image-modal.ground {
+.image-modal.ground::before {
   background-image: url("../../assets/img/bg-types/ground.svg");
 }
 
-.image-modal.ice {
+.image-modal.ice::before {
   background-image: url("../../assets/img/bg-types/ice.svg");
 }
 
-.image-modal.normal {
+.image-modal.normal::before {
   background-image: url("../../assets/img/bg-types/normal.svg");
 }
 
-.image-modal.psychic {
+.image-modal.psychic::before {
   background-image: url("../../assets/img/bg-types/psychic.svg");
 }
 
-.image-modal.rock {
+.image-modal.rock::before {
   background-image: url("../../assets/img/bg-types/rock.svg");
 }
 
-.image-modal.ghost {
+.image-modal.ghost::before {
   background-image: url("../../assets/img/bg-types/ghost.svg");
 }
 
-.image-modal.steel {
+.image-modal.steel::before {
   background-image: url("../../assets/img/bg-types/steel.svg");
 }
 
-.image-modal.flying {
+.image-modal.flying::before {
   background-image: url("../../assets/img/bg-types/flying.svg");
 }
 
@@ -445,3 +455,155 @@
 .stats .all .item .bar-status .separator li:not(:first-child) {
   margin-left: 5.4rem;
 }
+
+@media(max-width: 750px) {
+  .modal-container {
+    top: 4rem;
+  }
+  .box {
+    max-width: 32.8rem;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .image-modal {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 32.8rem;
+    height: 10.8rem;
+
+    flex-shrink: 0;
+    background-image: none;
+
+  }
+
+  .image-modal::before {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: -11rem;
+    left: 10.99rem;
+    width: 10.8rem;
+    height: 32.8rem;
+    transform: rotate(-90deg);
+    border-radius: 0px 16px 16px 0px;
+  }
+
+  .image-modal .pokemon-image {
+    position: absolute;
+    top: 3rem;
+    left: 10.9rem;
+    width: 10.9rem;
+    flex-shrink: 0;
+  }
+
+  .image-modal .icon {
+    top: 1.8rem;
+    right: -11.7rem;
+  }
+
+  .info-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 3rem 2.9rem;
+  }
+
+  .type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  .weak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .weak .waek-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stats .all {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stats .all .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stats .all .item:not(:last-child) {
+    margin-bottom: 1.3rem;
+  }
+
+  .stats .all .item span {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #7a7d80;
+    width: 3.8rem;
+  }
+
+  .stats .all .item .bar-status {
+    position: relative;
+    width: 100%;
+    max-width: 19.4rem;
+    height: 3px;
+    background-color: #eff3f6;
+  }
+
+  .stats .all .item .bar-status .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56%;
+    height: 100%;
+    z-index: 0;
+    background-color: #c20001;
+  }
+
+  .stats .all .item .bar-status .separator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .stats .all .item .bar-status .separator li {
+    width: .4rem;
+    height: .3rem;
+    background-color: #fff;
+  }
+
+  .stats .all .item .bar-status .separator li:not(:first-child) {
+    margin-left: 3.4rem;
+  }
+}
+

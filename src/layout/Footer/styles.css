@@ -27,3 +27,22 @@
 .footer-logo {
   width: 171px;
 }
+
+@media (max-width: 600px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .footer-text h2 {
+    text-align: center;
+  }
+
+  .footer-text p {
+    text-align: center;
+    width: 30rem;
+  }
+}

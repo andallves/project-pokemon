@@ -1,3 +1,8 @@
+.main {
+  width: 100%;
+  min-width: 37.5rem;
+  max-width: 144rem;
+}
 .container-section {
   width: 100%;
   padding: 30px 50px;
@@ -51,4 +56,28 @@
 
 li {
   list-style: none;
+}
+
+@media (max-width: 1000px) {
+  .container-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container-pokemons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+
+  .container-pokemons-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
 }

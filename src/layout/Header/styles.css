@@ -1,32 +1,39 @@
 .container-header {
-    width: 100%;
-    height: 706px;
-    background-color: #C20001;
-    background-image: url('../../assets/img/bg-red.svg');
-    background-position: center;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-direction: column;
-    transition: all 300ms;
+  width: 100%;
+  height: 706px;
+  background-color: #C20001;
+  background-image: url('../../assets/img/bg-red.svg');
+  background-position: center;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-direction: column;
+  transition: all 300ms;
+  overflow: hidden;
 }
 
 .container-header.bg-red {
-    background-image: url('../../assets/img/bg-red.svg');
+  background-image: url('../../assets/img/bg-red.svg');
 }
 
 .container-header.bg-blue {
-    background-image: url('../../assets/img/bg-blue.svg');
+  background-image: url('../../assets/img/bg-blue.svg');
 }
 
 .pokeball {
-    position: absolute;
-    top: 450px;
-    z-index: 10;
-
+  position: absolute;
+  top: 45rem;
+  z-index: 10;
 }
 
 .pokeball.blue {
-    top: 385px;
-    padding-left: 15px;
+  top: 38.5rem;
+  padding-left: 1.5rem;
+}
+
+@media(max-width: 400px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

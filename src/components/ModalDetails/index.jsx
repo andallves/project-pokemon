@@ -5,13 +5,9 @@ import { getPokemonTypeImage } from "../../utils/get-type-image"
 import { capitalizeFirstLetter } from '../../utils/captitaliza-first-letter'
 
 export const ModalDetails = ({ pokemonData, isOpen, btnClose }) => {
-
   const typeImg = getPokemonTypeImage(pokemonData.type)
-
-
   return (
     <>
-      {isOpen ? console.log('open') : console.log('closed')}
       {isOpen && (
         <div className={`modal-container ${pokemonData.type}`}>
           <div className={isOpen ? "overlay" : ""}></div>
@@ -38,7 +34,9 @@ export const ModalDetails = ({ pokemonData, isOpen, btnClose }) => {
               <ul className="type">
                 {pokemonData.types.map((type) => (
                   <li key={Math.random() + type.name}>
-                    <span className={`tag-type ${type.type.name}`}>{capitalizeFirstLetter(type.type.name)}</span>
+                    <span className={`tag-type ${type.type.name}`}>
+                      {capitalizeFirstLetter(type.type.name)}
+                    </span>
                   </li>
 
                 ))}

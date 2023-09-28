@@ -31,3 +31,9 @@
 .container-types button img {
   width: 16px;
 }
+
+@media (max-width: 600px) {
+  .container-types {
+    display: none;
+  }
+}

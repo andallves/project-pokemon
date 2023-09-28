@@ -1,60 +1,77 @@
 .heading {
-    width: 854px;
-    min-width: 327px;
-    height: 176px;
-    top: 133px;
-    left: 343px;
-    color: #ffffff;
-
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  width: 100%;
+  min-width: 32.7rem;
+  height: 176px;
+  top: 133px;
+  left: 343px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .tag-head {
-    margin: 0 auto;
-    padding: 5px;
-    width: 121px;
-    height: 34px;
-    border-radius: 244px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
+  margin: 0 auto;
+  padding: 5px;
+  width: 121px;
+  height: 34px;
+  border-radius: 244px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
 }
 
 .bag-red {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24.32px;
-    letter-spacing: 8%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24.32px;
+  letter-spacing: 8%;
 }
 
 .text-pokedex {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 22.5px;
-    color: #C20001;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #C20001;
 }
 
-.title { 
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 58.51px;
-    letter-spacing: -1%;
-    text-align: center;
-    margin: 5px;
+.title-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 58.51px;
+  letter-spacing: -1%;
+  text-align: center;
+  margin: 5px;
+  margin-bottom: 2.4rem;
 }
 
 .subtitle {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .heading {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title-container {
+    display: flex;
+    justify-content: center;
+  }
+  .title-text {
+    min-width: 32.7rem;
     text-align: center;
+    margin-bottom: 2.4rem;
+  }
 }
