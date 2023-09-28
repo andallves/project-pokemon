@@ -1,8 +1,8 @@
 .container-header {
   width: 100%;
+  max-width: 100%;
   height: 706px;
   background-color: #C20001;
-  background-image: url('../../assets/img/bg-red.svg');
   background-position: center;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@
   flex-direction: column;
   transition: all 300ms;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .container-header.bg-red {
@@ -20,15 +21,17 @@
   background-image: url('../../assets/img/bg-blue.svg');
 }
 
-.pokeball {
-  position: absolute;
-  top: 45rem;
-  z-index: 10;
+.image-pokeball {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  clip: rect(10rem);
 }
 
-.pokeball.blue {
-  top: 38.5rem;
-  padding-left: 1.5rem;
+.pokeball {
+  position: absolute;
+  top: 46rem;
+  z-index: 10;
 }
 
 @media(max-width: 400px) {

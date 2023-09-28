@@ -27,12 +27,12 @@ export const Header = () => {
             subtitle={'The perfect guide for those who want to hunt Pokémons around the world'}
           />
         )}
-
-        {toggle ? (
-          <img className='pokeball' src={pokeballRed} alt='pokeball-red' />
-        ) : (
-          <img className='pokeball blue' src={pokeballBlue} alt='pokeball-blue' />
-        )}
+        <div className='image-pokeball'></div>
+          {toggle ? (
+            <img className='pokeball' src={pokeballRed} alt='pokeball-red' />
+          ) : (
+            <img className='pokeball blue' src={pokeballBlue} alt='pokeball-blue' />
+          )}
       </div>
     </header>
   )

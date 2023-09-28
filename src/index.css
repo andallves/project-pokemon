@@ -17,7 +17,6 @@
   --type-water: #4F77BE;
   --type-fire: #E96303;
   --type-flying: #758CBD;
-
   --blue-primary: #3F5DB3;
 }
 
@@ -29,6 +28,6 @@
 }
 
 html {
-  font-size: 65.5%;
+  font-size: 62.5%;
 }
 
