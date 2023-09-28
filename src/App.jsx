@@ -10,6 +10,7 @@ import { SearchAnswer } from './components/SearchAnswer';
 import { LoadMoreCards } from './components/LoadMoreCards';
 import { loadPokemonsTypes } from './utils/load-types';
 import { loadPokemons } from './utils/load-pokemon';
+import { Select } from './components/Select';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -62,15 +63,13 @@ function App() {
     : pokemons
 
 
-  const filteredPokemonByType = (typeName, all = true) => {
+  const filteredPokemonByType = (typeName) => {
     setIsLoading(true)
-    const filteredPokemon = all ? 
-      allPokemons.filter((pokemon) => {
+    const filteredPokemon = allPokemons.filter((pokemon) => {
         return pokemon.type.toLowerCase().includes(
           typeName.toLowerCase()
         )
       }) 
-    : allPokemons.splice(0, pokemonsPerPage)
     setFilter(true)
     setPokemons(filteredPokemon)
     setIsLoading(false)
@@ -87,15 +86,15 @@ function App() {
         searchValue={searchValue}
       />
       <div className='container-section'>
-        <div className='container-filter'>
+        <div className='container-filter desktop'>
 
-          <FilterSearch
+          {/* <FilterSearch
             typeName={'all'}
             page={0}
             pokemonsPerPage={9}
             handleClickFilter={handleLoadPokemons}
             all={false}
-          />
+          /> */}
 
           {pokemonType.length > 0 &&
             pokemonType.map((type) => (
@@ -105,6 +104,14 @@ function App() {
                 handleClick={filteredPokemonByType}
               />
             ))}
+        </div>
+        <div className='container-filter mobile'>
+          <Select 
+            name={'type_id'}
+            text={'Show'}
+            options={pokemonType}
+            filterPokemon={filteredPokemonByType}
+          />
         </div>
 
         <div className='container-pokemons'>

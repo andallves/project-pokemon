@@ -135,4 +135,10 @@
     margin-bottom: 1rem;
 }
 
+@media (max-width: 500) {
+  .card-pokemon {
+    min-width: 28rem;
+  }
+}
+
 

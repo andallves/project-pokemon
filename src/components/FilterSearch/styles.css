@@ -32,8 +32,10 @@
   width: 16px;
 }
 
-@media (max-width: 600px) {
-  .container-types {
+@media (max-width: 1000px) {
+  .container-types.desktop {
     display: none;
+    visibility: hidden;
+    opacity: 0;
   }
 }
