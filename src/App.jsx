@@ -22,7 +22,7 @@ function App() {
   const [filter, setFilter] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleLoadPokemons = useCallback(async (page, pokemonsPerPage) => {
+  const handleLoadPokemons = useCallback(async (page = 0, pokemonsPerPage = 9) => {
     setIsLoading(true)
     const pokemonsWithTypes = await loadPokemons()
     const pokemonTypeResponse = await loadPokemonsTypes()
@@ -88,13 +88,10 @@ function App() {
       <div className='container-section'>
         <div className='container-filter desktop'>
 
-          {/* <FilterSearch
+          <FilterSearch
             typeName={'all'}
-            page={0}
-            pokemonsPerPage={9}
-            handleClickFilter={handleLoadPokemons}
-            all={false}
-          /> */}
+            handleClick={handleLoadPokemons}
+          />
 
           {pokemonType.length > 0 &&
             pokemonType.map((type) => (
