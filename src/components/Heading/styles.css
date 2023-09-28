@@ -2,7 +2,7 @@
   width: 100%;
   min-width: 32.7rem;
   height: 176px;
-  top: 133px;
+  top: 13.3rem;
   left: 343px;
   color: #ffffff;
   display: flex;
@@ -61,17 +61,21 @@
 
 @media (max-width: 500px) {
   .heading {
+    /* top: 13.3rem; */
     display: flex;
     justify-content: center;
+    padding-top: 8rem;
   }
 
   .title-container {
     display: flex;
     justify-content: center;
   }
+
   .title-text {
     min-width: 32.7rem;
     text-align: center;
     margin-bottom: 2.4rem;
+    font-size: 4.8rem;
   }
 }

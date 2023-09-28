@@ -5,7 +5,9 @@ export const Navbar = () => {
     return (
       <div className='navbar-container'>
         <div className='navbar'>
-            <Logo />
+            <a href="/">
+              <Logo />
+            </a>
             
             <p className='codeboost'>Case Study → code<span className='boost'>Boost</span></p>
         </div>

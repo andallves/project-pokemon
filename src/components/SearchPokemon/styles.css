@@ -8,14 +8,14 @@
     flex-direction: row;
     align-items: center ;
     justify-content: space-between;
-    padding: 23rem 5rem;
+    padding: 18rem 5rem 10rem;
     background-color: #f0f0f0;
 }
 
 .container-search label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 3.2rem;
     line-height: 39.01px;
     letter-spacing: -1%;
     color: #2F3133;
@@ -63,7 +63,7 @@
     border-color: #3e75c3;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .container-search {
     min-width: 370px;
     display: flex;
@@ -75,11 +75,22 @@
   }
 
   .container-search label {
-    width: 100%;
+    font-size: 2.5rem;
+    width: 35rem;
     
   }
 
   .container-input {
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .container-input input {
+    width: 100%;
+    min-width: 32.7rem;
+
   }
 }
