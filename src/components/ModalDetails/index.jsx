@@ -48,7 +48,7 @@ export const ModalDetails = ({ pokemonData, isOpen, btnClose }) => {
                 </li>
                 <li>
                   <span>Weight</span>
-                  <strong>{`${pokemonData.weight}kg`}</strong>
+                  <strong>{`${pokemonData.weight / 10}kg`}</strong>
                 </li>
                 <li>
                   <span>Abilities</span>
@@ -77,7 +77,9 @@ export const ModalDetails = ({ pokemonData, isOpen, btnClose }) => {
                     <div className='item' key={`${index} ${item.stat.name}`}>
                       <span>{capitalizeFirstLetter(item.stat.name)}</span>
                       <div className='bar-status'>
-                        <div className='bar'></div>
+                        {/* <Div width={item.base_stat} /> */}
+                        <div className='bar' style={{width:`${item.base_stat}%`}}>
+                        </div>
                         <ul className='separator'>
                           <li></li>
                           <li></li>

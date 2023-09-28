@@ -3,10 +3,9 @@
   height: 10rem;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 2rem;
   gap: 2rem;
   justify-content: start;
-  transition: all 500ms;
 }
 
 .container-title img {
@@ -40,7 +39,7 @@
     line-height: 150%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .container-title {
     display: flex;
     justify-content: center;

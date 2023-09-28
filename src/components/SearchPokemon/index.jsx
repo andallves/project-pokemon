@@ -8,19 +8,21 @@ export const SearchPokemon = ({ textLabel, handleChange, searchValue, placeholde
             <label className='label-search-pokemon' htmlFor='input-search'>
                 {textLabel}
             </label>
-            <div className='container-input'>
-                <input 
-                    type='search' 
-                    name='input-search'
-                    placeholder={placeholder}
-                    value={searchValue}
-                    onChange={(e) => handleChange(e)}
-                    autoFocus
-                />
-                <button type='submit'>
-                    <Search />
-                </button>
-            </div>
+            <div>
+              <div className='container-input'>
+                  <input 
+                      type='search' 
+                      name='input-search'
+                      placeholder={placeholder}
+                      value={searchValue}
+                      onChange={(e) => handleChange(e)}
+                      autoFocus
+                  />
+                  <button type='submit'>
+                      <Search />
+                  </button>
+              </div>
+          </div>
         </div>
     )
 }

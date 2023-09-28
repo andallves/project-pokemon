@@ -28,7 +28,9 @@ export const Select = ({
       >
         <option value={'all'}>All</option>
         {options.map((type) => (
-          <option key={type.url} value={type.name}>{capitalizeFirstLetter(type.name)}</option>
+          <option key={type.url} value={type.name}>
+            {capitalizeFirstLetter(type.name)}
+          </option>
         ))}
       </select>
     </div>

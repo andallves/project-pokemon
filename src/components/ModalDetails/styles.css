@@ -458,16 +458,22 @@
 
 @media(max-width: 750px) {
   .modal-container {
-    top: 4rem;
+    top: 2rem;
   }
+
   .box {
+    position: relative;
     max-width: 32.8rem;
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    height: auto;
   }
-
+  
+  .btn-close {
+    position: absolute;
+    
+  }
   .image-modal {
     position: relative;
     top: 0;

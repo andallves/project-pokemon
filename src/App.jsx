@@ -124,7 +124,6 @@ function App() {
             />
           )}
           <div className='container-pokemons-card' id='cards'>
-
             {searchedPokemons.length > 0 &&
               searchedPokemons.map((pokemon) => (
                 <CardPokemon
